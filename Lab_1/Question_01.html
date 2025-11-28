@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question_01.html</title>
+</head>
+<body>
+    <div>
+        <div id="f1" style="border:2px solid rebeccapurple;text-align:center;">formate1:</div>
+        <div id="f2" style="border:2px solid rebeccapurple;text-align:center;">formate2:</div>
+        <div id="f3" style="border:2px solid rebeccapurple;text-align:center;">formate3:</div>
+    </div>
+<script>
+    function formate(date){
+    var year = date.getFullYear();
+    var month = date.getMonth()+1;//Becuase month Start in JavaScript with 0
+    var day = date.getDate();
+
+    if(day<10) day = "0"+day
+    if(month<10) month = "0"+month
+
+    let months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    return {
+        formate1: year +'-'+month+'-'+day , // yyyy-mm-dd
+        formate2: day + '/'+month+'/'+year, // dd/mm/yyyy
+        formate3: months[date.getMonth()]+" "+day+" "+year  // mm dd yyyy
+    }
+}
+var input = prompt("Enter Date Here (yyyy-mm-dd)");
+var date = new Date(input);
+var result = formate(date);
+
+document.getElementById("f1").innerHTML = "Formate1:" + result.formate1;
+document.getElementById("f2").innerHTML = "Formate2:" + result.formate2;
+document.getElementById("f3").innerHTML = "Formate3:" + result.formate3;
+</script>
+</body>
+</html>
