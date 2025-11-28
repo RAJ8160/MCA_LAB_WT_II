@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab_2_A_2.html</title>
+</head>
+<body>
+    <input type="text"  id="name">
+    <h1 id="ans"></h1>
+    <button onclick="abc()">Submit</button>
+    <script>
+        function abc(){
+        let vowel = 0,consonant = 0
+        let vowelRegex = /^[aeiouAEIOU]$/;
+        let consonantRegex = /^[A-Za-z]$/;
+        var name = document.getElementById('name').value
+        for(let i of name){
+            if(vowelRegex.test(i)){
+                vowel++;
+            }else if(consonantRegex.test(i)){
+                consonant++;
+            }
+        }
+        document.getElementById('ans').innerHTML =  `For string "${name}" → Total Vowels: ${vowel} | Consonants: ${consonant}`;
+    }
+    </script>
+</body>
+</html>

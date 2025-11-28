@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab_2_5_c.html</title>
+</head>
+<body>
+    <input type="text"  id="name">
+    <h1 id="ans"></h1>
+    <button onclick="help()">Submit</button>
+    <button onclick="reset()">Reset</button>
+    <script>
+        function compress(s){
+            let compressChar ={}
+            for(let i of s){
+                if(compressChar[i]){
+                    compressChar[i]++;
+                }else{
+                    compressChar[i] =1;
+                }
+            }
+            return compressChar;
+        }
+        function help(){
+            let str = document.getElementById('name').value
+            if(str == ""){
+                document.getElementById('ans').innerHTML = `Please enter some data for get response.`
+                return;
+            }
+            let obj = compress(str)
+            let ans =''
+            for (let key in obj) {
+                let value = obj[key];
+                ans+= key+value
+        }
+        document.getElementById('ans').innerHTML = `This is ans ${ans}`
+    }
+    function reset(){
+       document.getElementById('ans').innerHTML = '';
+       document.getElementById('name').value ='';
+    }
+    </script>
+</body>
+</html>

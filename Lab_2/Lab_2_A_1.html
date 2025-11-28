@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab_2_A_1.html</title>
+</head>
+<body>
+    <input type="text" name="username" id="username">
+    <h1 id="ans"></h1>
+    <button onclick="updateFreq()">Submit</button>
+    <script>
+        function countFrequencyOfCharacter(){
+        let str = document.getElementById("username").value;
+        let charFreq = {};
+            for(let s of str){
+                char = s.toLowerCase()
+                if(charFreq[char]){
+                    charFreq[char]++;
+                }else{
+                    charFreq[char] = 1;
+                }
+            }
+            return charFreq;
+        }
+        function updateFreq() {
+            let freq = countFrequencyOfCharacter();
+            document.getElementById("ans").innerHTML =
+                "Characters and Frequencies: " + JSON.stringify(freq);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab_2_A_or_1.html</title>
+</head>
+<body>
+     <input type="text" name="username" id="username">
+    <h1 id="ans"></h1>
+    <button onclick="abc()">Submit</button>
+    <script>
+        function abc(){
+            let str = document.getElementById('username').value;
+            let charFreq = {};
+            str.split('').map((char) => {
+            char = char.toLowerCase();
+            charFreq[char] = (charFreq[char] || 0) + 1;
+        });
+        document.getElementById("ans").innerHTML =
+                "Characters and Frequencies: " + JSON.stringify(charFreq);
+        }
+    </script>
+</body>
+</html>

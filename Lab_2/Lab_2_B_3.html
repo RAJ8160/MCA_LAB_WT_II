@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab_2_B_3.html</title>
+</head>
+<body>
+    <input type="text" name="hobby" id="hobbies">
+    <button onclick="abc()">Submit</button>
+    <h1 id="ans"></h1>
+    <script>
+        function abc(){
+            let l = document.getElementById('hobbies').value.split(" ")
+            let max = 0;
+            let a =''
+            for(let ch of l){
+                if(ch.length>max){
+                    max = ch.length
+                    a = ch
+                }
+            }
+            document.getElementById('ans').innerHTML = "Longest Word in String is "+a+" Which has "+a.length+" Characters"
+        }
+    </script>
+</body>
+</html>

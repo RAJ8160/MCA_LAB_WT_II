@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab_2_B_4.html</title>
+</head>
+
+<body>
+    <input type="text" name="name" id="name">
+    <h1 id="ans"></h1>
+    <button onclick="handleClick()">Submit</button>
+    <button onclick="reset()">Reset</button>
+    <script>
+        function nonRep(s) {
+            let n = s.length;
+            for (let i = 0; i < n; ++i) {
+                let found = false;
+                for (let j = 0; j < n; ++j) {
+                    if (i !== j && s[i] === s[j]) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) return s[i];
+            }
+            return "No nonRepeated Character exsits.";
+        }
+        function handleClick() {
+            let s = document.getElementById('name').value;
+            if (s == "") {
+                document.getElementById('ans').innerHTML = "Please Write Somthing for get Result."
+            } else {
+                document.getElementById('ans').innerHTML = "First non Repeating character is " + nonRep(s)
+            }
+        }
+        function reset() {
+            document.getElementById('ans').innerHTML = '';
+            document.getElementById('name').value = '';
+        }
+    </script>
+</body>
+
+</html>
