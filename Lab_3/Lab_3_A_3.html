@@ -1,0 +1,39 @@
+<!-- 3. Create a function to count the frequency of words in a sentence using Map. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="ans"></h1>
+<script>
+    let str = prompt("Enter Sentence What you want")
+
+    function getFrequence(){
+        let str1 = str.split(' ')
+       let freq = new Map();
+
+        str1.map(w => {
+            if(freq.has(w)){
+                freq.set(w, freq.get(w) + 1);
+            } else {
+                freq.set(w, 1);
+            }
+        });
+
+        return freq;
+    }
+   
+    freq = getFrequence()
+
+    // Print result if not use JSON.stringify we use this becuase map method throw the object firts we convert it insted of our requirement
+    // let output = "";
+    // for (let key in freq) {
+    //     output += key + " : " + freq[key] + "<br>";
+    // }
+    document.getElementById('ans').innerHTML = "Frequence if Each character is "+ JSON.stringify(Object.fromEntries(freq))
+</script>
+</body>
+</html>

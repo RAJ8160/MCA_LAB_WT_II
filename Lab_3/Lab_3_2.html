@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h3>Destructure User Objects</h3>
+
+    <script>
+        // Array of user objects
+        const users = [
+            { name: "Alice", age: 25 },
+            { name: "Bob", age: 30 },
+            { name: "Charlie", age: 22 }
+        ];
+
+        // Arrays to store names and ages
+        const names = [];
+        const ages = [];
+
+        // Destructuring each object
+        for (const { name, age } of users) {
+            names.push(name);
+            ages.push(age);
+        }
+
+        document.writeln("Array of Names : " + names + `<br>`); // ["Alice", "Bob", "Charlie"]
+        document.writeln("Array of Ages: " + ages);   // [25, 30, 22]
+    </script>
+
+</body>
+
+</html>

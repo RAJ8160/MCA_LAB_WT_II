@@ -1,0 +1,35 @@
+<!-- 1. Create a function using Rest Parameter to calculate the product of any number of
+arguments. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Lab_3_1
+        </title>
+    </head>
+<body>
+
+<h3>Calculate Product of Numbers</h3>
+
+<p>Open console and call <code>multiply(2,3,4)</code> or any numbers.</p>
+
+<script>
+// Function using Rest Parameter
+function multiply(...numbers) {
+    let product = 1; // start with 1 for multiplication
+    for (let num of numbers) {
+        product *= num; // multiply each number
+    }   
+    return product;
+}
+
+// Example usage
+document.writeln("Mulitplication of number is : "+multiply(5, 6)+`<br></br>`);    // Output: 30
+document.writeln("Mulitplication of number is : "+multiply(2, 3, 4)+`<br></br>`); // Output: 24
+document.writeln("Mulitplication of number is : "+multiply(7)+`<br></br>`);       // Output: 7
+document.writeln("Mulitplication of number is : "+multiply()+`<br></br>`);        // Output: 1 (no arguments)
+</script>
+
+</body>
+</html>
