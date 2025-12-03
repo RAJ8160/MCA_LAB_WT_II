@@ -1,0 +1,44 @@
+<!-- Write a function that formats a given Date into different formats like: YYYY/MM/DD,
+DD-MM-YYYY, or Month DD, YYYY (e.g., November 12, 2025) in easy manner -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 01</title>
+    </head>
+<body>
+
+<h3>Select Date:</h3>
+
+<input type="date" id="dateInput" onchange="showFormattedDate()">
+
+<p>YYYY/MM/DD: <span id="f1"></span></p>
+<p>DD-MM-YYYY: <span id="f2"></span></p>
+<p>Month DD, YYYY: <span id="f3"></span></p>
+
+<script>
+function showFormattedDate() {
+  var date = document.getElementById("dateInput").value;
+  var d = new Date(date);
+
+  var year = d.getFullYear();
+  var month = d.getMonth() + 1;
+  var day = d.getDate();
+
+  // Manually add leading zero or use function padstart(2,"0");
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+
+  var monthNames = [
+    "January","February","March","April","May","June",
+    "July","August","September","October","November","December"
+  ];
+
+  document.getElementById("f1").innerHTML = year + "/" + month + "/" + day;
+  document.getElementById("f2").innerHTML = day + "-" + month + "-" + year;
+  document.getElementById("f3").innerHTML = monthNames[d.getMonth()] + " " + day + ", " + year;
+}
+</script>
+
+</body>
+</html>

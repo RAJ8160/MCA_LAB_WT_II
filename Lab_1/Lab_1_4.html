@@ -1,0 +1,41 @@
+<!-- Take a date input from user and display which day (e.g., Monday, Tuesday) -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 04</title>
+    </head>
+<body>
+
+<h3>Find Day of the Week</h3>
+
+<label>Select a date: </label>
+<input type="date" id="dateInput">
+<button onclick="showDay()">Check Day</button>
+
+<p id="result"></p>
+
+<script>
+function showDay() {
+    // Get selected date
+    var dateValue = document.getElementById("dateInput").value;
+    if(!dateValue){
+        alert("Please select a date");
+        return;
+    }
+
+    var d = new Date(dateValue);
+
+    // Array of week days
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    // Get day index
+    var dayName = days[d.getDay()];
+
+    // Display result
+    document.getElementById("result").innerHTML = "Day: " + dayName;
+}
+</script>
+
+</body>
+</html>

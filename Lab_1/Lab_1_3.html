@@ -1,0 +1,33 @@
+<!-- Create a random 6-digit numeric OTP or alphanumeric password using
+Math.random(). -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 03</title>
+    </head>
+<body>
+
+<h3>Generate Alphanumeric Password</h3>
+
+<button onclick="generatePassword()">Generate Password</button>
+
+<p id="result"></p>
+
+<script>
+function generatePassword() {
+    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var password = "";
+
+    // 8-character password (you can change length)
+    for (var i = 0; i < 6; i++) {
+        var index = Math.floor(Math.random() * chars.length);
+        password += chars[index];
+    }
+
+    document.getElementById("result").innerHTML = "Password: " + password;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- Write a JS function to reverse an array using loop or reduce( ). (Without using
+reverse( ) ).  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 02</title>
+</head>
+
+<body>
+
+    <div id="main"></div>
+
+    <script>
+        var l = Number(prompt("Enter length of array"));
+        var arr = [];
+
+        for (let i = 0; i < l; i++) {
+            arr[i] = Number(prompt("Enter element of array " + i));
+        }
+
+        // Print Original Array
+        document.write("Original Array: ");
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + " ");
+        }
+        document.write("<br><br>");
+
+        // Reverse Array using reduce()
+        function reverseArray(arr) {
+            return arr.reduce((prev, cur) => [cur, ...prev], []);
+        }
+
+        var reversed = reverseArray(arr);
+
+        // Print Reversed Array
+        document.write("Reversed Array: " + reversed);
+
+    </script>
+
+</body>
+
+</html>
