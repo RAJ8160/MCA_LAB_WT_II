@@ -1,3 +1,4 @@
+//The fs module is a built-in Node.js core module used to create, read, write, update, and delete files and directories.
 // _______________________________________________________________
 
 //!syntaxt : fs.writeFileSynce(filePath,data,options)
@@ -32,6 +33,7 @@ const writeFile =fs.writeFileSync(filePath,"This is initial text.",'utf-8');
 // const writeFile =fs.writeFileSync(fileName,htmlTemplate,'utf-8');
 
 console.log(writeFile)
+
 
 
 
